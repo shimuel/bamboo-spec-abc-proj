@@ -1,0 +1,34 @@
+---
+version: 2
+plan:
+  project-key: ABCP
+  key: TPS1
+  name: Test-Plan-Spec1
+stages:
+- Default Stage:
+    manual: false
+    final: false
+    jobs:
+    - Default Job
+Default Job:
+  key: JOB1
+  other:
+    clean-working-dir: true
+notifications: []
+# labels: []
+other:
+  concurrent-build-plugin: system-default
+---
+version: 2
+plan:
+  key: ABCP-TPS1
+plan-permissions:
+- users:
+  - bamboo
+  permissions:
+  - view
+  - edit
+  - build
+  - clone
+  - admin
+...
